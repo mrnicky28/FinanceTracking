@@ -1,2 +1,53 @@
-<img class="img" src="../../../../../public/img/bg-banner-platform_4.jpg" alt="">
-<p>Works</p>
+<ngb-carousel *ngIf="images" [showNavigationArrows]="false">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img class="img-carousel" src="../../../../../../assets/img/1.jpg" alt="Random first slide">
+        </div>
+
+        <div class="carousel-caption">
+            <div class="container">
+                <div class="banner-title-wrapper">
+                    <h3 class="banner-title">Торгуйте криптовалютой.</h3>
+                    <h3 class="banner-title">Просто и безопасно.</h3>
+                </div>
+                <div class="banner-description-wrapper">
+                    <p class="banner-description">Ультросовременная платформа.</p>
+                    <p class="banner-description">Надёжное регулирование.</p>
+                </div>
+                <button class="btn btn-banner">Приступить к торговле</button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img class="img-carousel" src="../../../../../../assets/img/2.jpg" alt="Random second slide">
+        </div>
+        <div class="carousel-caption">
+            <div class="container">
+                <div class="banner-title-wrapper">
+                    <h3 class="banner-title">Торгуйте биткойном со 100-кратным левереджем.</h3>
+                </div>
+                <div class="banner-description-wrapper">
+                    <p class="banner-description">Начтните с 0.001 BTC. Узкие спреды. Никаких скрытых комиссий.</p>
+                </div>
+                <button class="btn btn-banner">Приступить к торговле</button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img class="img-carousel" src="../../../../../../assets/img/3.png" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+            <div class="container">
+                <div class="banner-title-wrapper">
+                    <h3 class="banner-title">Используйте волатильность.</h3>
+                </div>
+                <div class="banner-description-wrapper">
+                    <p class="banner-description">Торгуйте безопасно и быстро.</p>
+                </div>
+                <button class="btn btn-banner">Торговать сейчас</button>
+            </div>
+        </div>
+    </ng-template>
+</ngb-carousel>

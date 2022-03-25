@@ -31,10 +31,12 @@ nav ul::after{
     clear: both;
 }
 .topmenu {
-    margin-right: 20px;
+    margin: 0;
+    padding: 0;
 }
 .submenu{
     padding: 8px;
+    z-index: 100;
 }
 
 .topmenu > li a {
