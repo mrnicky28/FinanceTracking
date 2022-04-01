@@ -1,0 +1,62 @@
+<div class="fixed-overlay">
+    <div class="auth-page modal-cont">
+        <div class="container">
+            <div class="row">
+                <div class="content-wrapper">
+                    <a class="bg-close-icon" (click)="onClose()"
+                        ><img
+                            class="close-icon"
+                            src="../../../../../assets/icons/close-icon.png"
+                            alt=""
+                    /></a>
+                    <h1 class="text-xs-center modal-title">Регистрация</h1>
+
+                    <!-- <app-backend-error-messages *ngIf="backendErrors$ | async" [backendErrors]="backendErrors$ | async">
+                </app-backend-error-messages> -->
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <fieldset>
+                            <fieldset class="form-group">
+                                <input
+                                    type="text"
+                                    class="input-control"
+                                    placeholder="Имя"
+                                    formControlName="username"
+                                />
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <input
+                                    type="email"
+                                    class="input-control"
+                                    placeholder="Электронный адрес"
+                                    formControlName="email"
+                                />
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <input
+                                    type="password"
+                                    class="input-control"
+                                    placeholder="Пароль"
+                                    formControlName="password"
+                                />
+                            </fieldset>
+                            <p class="text-xs-center">
+                                У вас уже есть аккаунт?
+                                <a
+                                    class="toggle-link"
+                                    (click)="redirectToLogin()"
+                                    >Войти</a
+                                >
+                            </p>
+                            <button
+                                class="btn btn-lg btn-primary pull-xs-right"
+                                type="submit"
+                            >
+                                Далее
+                            </button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
