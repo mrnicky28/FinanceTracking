@@ -17,8 +17,8 @@
         </nav>
 
         <div class="auth-btns">
-            <button class="btn btn-login">Войти</button>
-            <button class="btn btn-register">Регистрация</button>
+            <a class="btn btn-login" (click)="signIn()">Войти</a>
+            <a class="btn btn-register" (click)="signUp()">Регистрация</a>
         </div>
 
     </div>
@@ -29,7 +29,7 @@
             Finance Tracking
         </div>
         <div class="about">Pегулируемая криптобиржа снг</div>
-        <div class="currency-ticker">"Бегущая строка курсов"</div>
+        <div class="currency-ticker"><app-currency-ticker></app-currency-ticker></div>
         <div class="language">RU</div>
     </div>
 </div>

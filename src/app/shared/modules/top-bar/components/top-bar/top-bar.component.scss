@@ -59,8 +59,6 @@ nav ul::after{
     border-radius: 3px;
     background-color: rgba(207, 207, 207, 0.29);
     color: #ffffff;
-
-
 }
 
 nav ul li a:hover{
@@ -77,7 +75,14 @@ nav ul li:hover ul{
     width: 200px;
 }
 
+.auth-btns{
+    display: flex;
+}
+
 .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     font-size: 13px;
     height: 32px;
@@ -126,13 +131,13 @@ nav ul li:hover ul{
     margin-right: 20px;
 }
 
-.currency-ticker{
-    margin: 10px;
-    background-color: #fff;
-    width: 450px;
-    height: 40px;
+// .currency-ticker{
+//     margin: 10px;
+//     background-color: #fff;
+//     width: 450px;
+//     height: 40px;
 
-}
+// }
 .language{
     color: #fff;
     display: flex;
