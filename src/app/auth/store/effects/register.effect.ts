@@ -11,6 +11,8 @@ import {
     registerSuccessAction,
 } from '../actions/register.action';
 
+
+
 @Injectable()
 export class RegisterEffect {
     constructor(private actions$: Actions, private authService: AuthService) {}
@@ -25,14 +27,14 @@ export class RegisterEffect {
                     }),
                     catchError((errorResponse: HttpErrorResponse) => {
                         return of(
-                                     registerFailureAction({
-                                         errors: {
-                                             error: errorResponse.message
-                                                 .split('(')[1]
-                                                 .split(')')[0],
-                                         },
-                                     }),
-                                 );
+                            registerFailureAction({
+                                error: [
+                                    errorResponse.message
+                                        .split('(')[1]
+                                        .split(')')[0],
+                                ],
+                            }),
+                        );
                     }),
                 );
             }),
