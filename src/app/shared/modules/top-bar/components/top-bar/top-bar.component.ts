@@ -18,12 +18,10 @@ export class TopBarComponent implements OnInit {
     signIn(): void {
         const dialogConfig = new MatDialogConfig();
         this.dialog.open(LoginComponent);
-        this.router.navigate(['/login']);
+        // this.router.navigate(['/login']);
     }
     signUp(): void {
-        const dialogRef = this.dialog.open(RegisterComponent, {
-            width: '0px',
-        });
-        this.router.navigate(['/register']);
+        this.dialog.open(RegisterComponent);
+        // this.router.navigate(['/register']);
     }
 }
