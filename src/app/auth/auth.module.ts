@@ -11,7 +11,7 @@ import { MaterialModule } from '../shared/modules/material/material.module';
 import { LoginComponent } from './components/login/login/login.component';
 import { RegisterComponent } from './components/register/register/register.component';
 import { RegisterEffect } from './store/effects/register.effect';
-import { reducers } from './store/redusers';
+import { reducers } from './store/reducers';
 
 const routes: Routes = [
     // {
