@@ -9,7 +9,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +17,7 @@ import { CurrencyTickerModule } from './shared/modules/currency-ticker/currency-
 import { MaterialModule } from './shared/modules/material/material.module';
 import { PromoCarouselModule } from './shared/modules/promo-carousel/promo-carousel.module';
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
+
 
 @NgModule({
     declarations: [AppComponent],
