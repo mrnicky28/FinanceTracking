@@ -11,8 +11,7 @@
                     /></a>
                     <h1 class="text-xs-center modal-title">Регистрация</h1>
 
-                    <!-- <app-backend-error-messages *ngIf="backendErrors$ | async" [backendErrors]="backendErrors$ | async">
-                </app-backend-error-messages> -->
+
                     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <fieldset>
                             <fieldset class="form-group">
@@ -47,6 +46,9 @@
                                     formControlName="Confirmpassword"
                                 />
                             </fieldset> -->
+
+                            <app-backend-error-messages *ngIf="backendErrors$ | async">
+                            </app-backend-error-messages>
                             <p class="text-xs-center">
                                 У вас уже есть аккаунт?
                                 <a
