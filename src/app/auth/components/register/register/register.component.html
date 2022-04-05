@@ -13,7 +13,7 @@
 
                     <!-- <app-backend-error-messages *ngIf="backendErrors$ | async" [backendErrors]="backendErrors$ | async">
                 </app-backend-error-messages> -->
-                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <fieldset>
                             <fieldset class="form-group">
                                 <input
@@ -39,6 +39,14 @@
                                     formControlName="password"
                                 />
                             </fieldset>
+                            <!-- <fieldset class="form-group">
+                                <input
+                                    type="password"
+                                    class="input-control"
+                                    placeholder="Подтвердите пароль"
+                                    formControlName="Confirmpassword"
+                                />
+                            </fieldset> -->
                             <p class="text-xs-center">
                                 У вас уже есть аккаунт?
                                 <a
@@ -50,6 +58,7 @@
                             <button
                                 class="btn btn-lg btn-primary pull-xs-right"
                                 type="submit"
+                                [disabled]="isSubmitting$ | async"
                             >
                                 Далее
                             </button>
