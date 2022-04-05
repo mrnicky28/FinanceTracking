@@ -30,6 +30,18 @@
         </div>
         <div class="about">Pегулируемая криптобиржа снг</div>
         <div class="currency-ticker"><app-currency-ticker></app-currency-ticker></div>
-        <div class="language">RU</div>
+        <div class="language">
+            <div class="row">
+                <div class="col">
+                  <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary btn-select" id="dropdownBasic1" ngbDropdownToggle>Language</button>
+                    <div class="option-element" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button ngbDropdownItem>RU</button>
+                      <button ngbDropdownItem>EN</button>
+                      <button ngbDropdownItem>DE</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
     </div>
 </div>
