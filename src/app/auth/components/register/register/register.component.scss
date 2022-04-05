@@ -70,8 +70,12 @@
 }
 
 .toggle-link{
+    cursor: pointer;
     text-decoration: none;
     color: #00c46b;
+    &:hover{
+        color: #018e4e;
+    }
 }
 
 .bg-close-icon{
