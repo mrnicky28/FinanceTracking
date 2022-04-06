@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { RegisterRequestInterface } from 'src/app/auth/interfaces/registerRequest.interface';
 import { registerAction } from 'src/app/auth/store/actions/register.action';
 import { isSubmittingSelector, validationErrorsSelector } from 'src/app/auth/store/selector';
+import { MatchPasswordValidator } from 'src/app/auth/validators/matchPassword.validator';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -37,12 +38,28 @@ export class RegisterComponent implements OnInit {
     }
 
     initializeForm(): void {
-        this.registerForm = this.fb.group({
-            username: [null, [Validators.required, Validators.maxLength(32)]],
-            email: [null, [Validators.required, Validators.email]],
-            password: [null, [Validators.required, Validators.minLength(10)]],
-            // confirPassword: ['', Validators.required],
-        });
+        this.registerForm = this.fb.group(
+            {
+                username: [
+                    null,
+                    [Validators.required, Validators.maxLength(32)],
+                ],
+                email: [null, [Validators.required, Validators.email]],
+                password: [
+                    null,
+                    [Validators.required, Validators.minLength(10)],
+                ],
+                confirmPassword: [null, [Validators.required]],
+            },
+            {
+                validators: [
+                    MatchPasswordValidator.matchPassword(
+                        'password',
+                        'confirmPassword',
+                    ),
+                ],
+            },
+        );
     }
 
     onSubmit(): void {
