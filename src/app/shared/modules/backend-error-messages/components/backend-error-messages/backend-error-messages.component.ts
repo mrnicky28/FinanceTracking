@@ -31,7 +31,9 @@ export class BackendErrorMessagesComponent implements OnInit {
         switch (this.errorMessage[0]) {
             case 'auth/invalid-email':
                 this.error$.subscribe((response) => this.errors.push(response));
-                this.error$.next('Такого email не существует.');
+                this.error$.next(
+                    'Такого email не существует. Введите email ещё раз.',
+                );
                 break;
         }
     }
