@@ -104,3 +104,12 @@
 .validation-errors{
     font-size: 12px;
 }
+
+input {
+    &.ng-invalid.ng-touched {
+        border: 0.4px solid #f10000;
+    }
+    &.ng-valid.ng-touched {
+        border: 0.4px solid #00c46b;
+    }
+}
