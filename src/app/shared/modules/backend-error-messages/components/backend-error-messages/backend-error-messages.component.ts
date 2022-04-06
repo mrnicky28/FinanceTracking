@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { validationErrorsSelector } from 'src/app/auth/store/selector';
+
+import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 
 @Component({
     selector: 'app-backend-error-messages',
@@ -30,7 +31,7 @@ export class BackendErrorMessagesComponent implements OnInit {
         switch (this.errorMessage[0]) {
             case 'auth/invalid-email':
                 this.error$.subscribe((response) => this.errors.push(response));
-                this.error$.next('Некорректный email.');
+                this.error$.next('Такого email не существует.');
                 break;
         }
     }
