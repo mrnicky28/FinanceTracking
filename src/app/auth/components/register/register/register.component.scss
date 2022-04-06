@@ -40,7 +40,12 @@
     padding: 20px;
 }
 
+.form-group {
+    margin-bottom: 10px;
+}
+
 .input-control{
+    margin-bottom: 5px;
     padding-left: 10px;
     border-radius: 10px;
     width: 100%;
@@ -94,4 +99,8 @@
 }
 .bg-close-icon:hover{
     background-color: #fffefe9c;
+}
+
+.validation-errors{
+    font-size: 12px;
 }
