@@ -6,13 +6,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { BackendErrorMessagesModule } from '../shared/modules/backend-error-messages/backend-error-messages.module';
+
+import {
+    BackendErrorMessagesModule
+} from '../shared/modules/backend-error-messages/backend-error-messages.module';
 import { MaterialModule } from '../shared/modules/material/material.module';
 import { LoginComponent } from './components/login/login/login.component';
 import { RegisterComponent } from './components/register/register/register.component';
 import { RegisterEffect } from './store/effects/register.effect';
 import { reducers } from './store/reducers';
-
 
 const routes: Routes = [
     // {
