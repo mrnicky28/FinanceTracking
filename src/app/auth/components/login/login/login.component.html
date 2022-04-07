@@ -12,8 +12,6 @@
                     </a>
                     <h1 class="text-xs-center modal-title">Войти</h1>
 
-                    <!-- <app-backend-error-messages *ngIf="backendErrors$ | async" [backendErrors]="backendErrors$ | async">
-                    </app-backend-error-messages> -->
                     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <fieldset>
                             <fieldset class="form-group">
@@ -23,6 +21,16 @@
                                     placeholder="Электронный адрес"
                                     formControlName="email"
                                 />
+                                <mat-error class="validation-errors"
+                                    *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+                                    <mat-error class="validation-errors"
+                                        *ngIf="loginForm.get('email')?.errors?.required">
+                                        Поле email не должно быть пустым.
+                                    </mat-error>
+                                    <mat-error class="validation-errors"
+                                        *ngIf="loginForm.get('email')?.errors?.email">Введите корректный email
+                                    </mat-error>
+                                </mat-error>
                             </fieldset>
                             <fieldset class="form-group">
                                 <input
@@ -31,6 +39,18 @@
                                     placeholder="Пароль"
                                     formControlName="password"
                                 />
+                                <mat-error class="validation-errors"
+                                    *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+                                    <mat-error class="validation-errors"
+                                        *ngIf="loginForm.get('password')?.errors?.required">
+                                        Поле пароль не должно быть пустым.
+                                    </mat-error>
+                                    <mat-error class="validation-errors"
+                                        *ngIf="loginForm.get('password')?.errors?.minlength">Поле пароль должно
+                                        привышать
+                                        {{ loginForm.get("password")?.errors?.minlength?.requiredLength }}
+                                        символов</mat-error>
+                                </mat-error>
                             </fieldset>
                             <div *ngIf="!loginForm.pristine; else errorsBlock"></div>
                             <ng-template #errorsBlock>
