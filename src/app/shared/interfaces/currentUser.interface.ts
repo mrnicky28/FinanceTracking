@@ -1,7 +1,7 @@
 export interface CurrentUserInterface {
-    id: number;
-    username: string;
-    email: string;
-    password: string;
-    token: string;
+    user: {
+        accessToken: string;
+        displayName: string | null;
+        email: string;
+    };
 }
