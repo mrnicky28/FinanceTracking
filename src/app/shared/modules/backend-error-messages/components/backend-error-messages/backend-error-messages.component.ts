@@ -38,6 +38,16 @@ export class BackendErrorMessagesComponent implements OnInit {
                 this.error$.subscribe((response) => this.errors.push(response));
                 this.error$.next('Такой email уже существует.');
                 break;
+
+            case 'auth/user-not-found':
+                this.error$.subscribe((response) => this.errors.push(response));
+                this.error$.next('Такого пользователя не существует.');
+                break;
+
+            case 'auth/wrong-password':
+                this.error$.subscribe((response) => this.errors.push(response));
+                this.error$.next('Введён неверный пароль.');
+                break;
         }
     }
 }
