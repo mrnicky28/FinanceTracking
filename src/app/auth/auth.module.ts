@@ -15,6 +15,7 @@ import { MaterialModule } from '../shared/modules/material/material.module';
 import { PersistanceService } from '../shared/services/persistance/persistance.service';
 import { LoginComponent } from './components/login/login/login.component';
 import { RegisterComponent } from './components/register/register/register.component';
+import { LoginEffect } from './store/effects/login.effect';
 import { RegisterEffect } from './store/effects/register.effect';
 import { reducers } from './store/reducers';
 
@@ -32,7 +33,7 @@ const routes: Routes = [];
         LoadingModule,
         RouterModule.forChild(routes),
         StoreModule.forFeature('auth', reducers),
-        EffectsModule.forFeature([RegisterEffect]),
+        EffectsModule.forFeature([RegisterEffect, LoginEffect]),
     ],
     exports: [LoginComponent, RegisterComponent],
     providers: [NgbActiveModal, PersistanceService],
