@@ -32,6 +32,11 @@
                                     formControlName="password"
                                 />
                             </fieldset>
+                            <div *ngIf="!loginForm.pristine; else errorsBlock"></div>
+                            <ng-template #errorsBlock>
+                                <app-backend-error-messages *ngIf="backendErrors$ | async">
+                                </app-backend-error-messages>
+                            </ng-template>
                             <p class="text-xs-center">
                                 Нет аккаунта?
                                 <a
@@ -44,7 +49,6 @@
                                 class="btn btn-lg btn-primary pull-xs-right"
                                 type="submit"
                                 [disabled]="loginForm.invalid || (isSubmitting$ | async)">
-                            >
                                 Далее
                             </button>
                         </fieldset>
