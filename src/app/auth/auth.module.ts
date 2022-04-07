@@ -10,6 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import {
     BackendErrorMessagesModule
 } from '../shared/modules/backend-error-messages/backend-error-messages.module';
+import { LoadingModule } from '../shared/modules/loading/loading.module';
 import { MaterialModule } from '../shared/modules/material/material.module';
 import { LoginComponent } from './components/login/login/login.component';
 import { RegisterComponent } from './components/register/register/register.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
         NgbModule,
         ReactiveFormsModule,
         BackendErrorMessagesModule,
+        LoadingModule,
         RouterModule.forChild(routes),
         StoreModule.forFeature('auth', reducers),
         EffectsModule.forFeature([RegisterEffect]),

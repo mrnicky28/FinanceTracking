@@ -1,7 +1,9 @@
 import { Observable } from 'rxjs';
 import { RegisterRequestInterface } from 'src/app/auth/interfaces/registerRequest.interface';
 import { registerAction } from 'src/app/auth/store/actions/register.action';
-import { isSubmittingSelector, validationErrorsSelector } from 'src/app/auth/store/selector';
+import {
+    isLoadingSelector, isSubmittingSelector, validationErrorsSelector
+} from 'src/app/auth/store/selector';
 import { MatchPasswordValidator } from 'src/app/auth/validators/matchPassword.validator';
 
 import { Component, OnInit } from '@angular/core';
@@ -19,13 +21,10 @@ import { LoginComponent } from '../../login/login/login.component';
 export class RegisterComponent implements OnInit {
     registerForm!: FormGroup;
     isSubmitting$!: Observable<boolean>;
+    isLoading$!: Observable<boolean>;
     backendErrors$!: Observable<string[] | null>;
 
-    constructor(
-        private fb: FormBuilder,
-        private store: Store,
-        private dialog: MatDialog,
-    ) {}
+    constructor(private fb: FormBuilder, private store: Store, private dialog: MatDialog) {}
 
     ngOnInit(): void {
         this.initializeForm();
@@ -34,30 +33,20 @@ export class RegisterComponent implements OnInit {
 
     initializeValues(): void {
         this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
+        this.isLoading$ = this.store.pipe(select(isLoadingSelector));
         this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
     }
 
     initializeForm(): void {
         this.registerForm = this.fb.group(
             {
-                username: [
-                    null,
-                    [Validators.required, Validators.maxLength(32)],
-                ],
+                username: [null, [Validators.required, Validators.maxLength(32)]],
                 email: [null, [Validators.required, Validators.email]],
-                password: [
-                    null,
-                    [Validators.required, Validators.minLength(10)],
-                ],
+                password: [null, [Validators.required, Validators.minLength(10)]],
                 confirmPassword: [null, [Validators.required]],
             },
             {
-                validators: [
-                    MatchPasswordValidator.matchPassword(
-                        'password',
-                        'confirmPassword',
-                    ),
-                ],
+                validators: [MatchPasswordValidator.matchPassword('password', 'confirmPassword')],
             },
         );
     }
