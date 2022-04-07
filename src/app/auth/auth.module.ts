@@ -12,21 +12,13 @@ import {
 } from '../shared/modules/backend-error-messages/backend-error-messages.module';
 import { LoadingModule } from '../shared/modules/loading/loading.module';
 import { MaterialModule } from '../shared/modules/material/material.module';
+import { PersistanceService } from '../shared/services/persistance/persistance.service';
 import { LoginComponent } from './components/login/login/login.component';
 import { RegisterComponent } from './components/register/register/register.component';
 import { RegisterEffect } from './store/effects/register.effect';
 import { reducers } from './store/reducers';
 
-const routes: Routes = [
-    // {
-    //     path: 'register',
-    //     component: RegisterComponent,
-    // },
-    // {
-    //     path: 'login',
-    //     component: LoginComponent,
-    // },
-];
+const routes: Routes = [];
 
 @NgModule({
     declarations: [LoginComponent, RegisterComponent],
@@ -43,6 +35,6 @@ const routes: Routes = [
         EffectsModule.forFeature([RegisterEffect]),
     ],
     exports: [LoginComponent, RegisterComponent],
-    providers: [NgbActiveModal],
+    providers: [NgbActiveModal, PersistanceService],
 })
 export class AuthModule {}
