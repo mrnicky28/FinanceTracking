@@ -1,5 +1,5 @@
 tabWidth: 4
-printWidth: 150
+printWidth: 90
 useTabs: false
 overrides:
   - files: "*.component.html"
