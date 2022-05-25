@@ -1,19 +1,28 @@
 import { from, Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 import {
-    Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword
+    Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile
 } from '@angular/fire/auth';
 
 @Injectable({
     providedIn: 'root',
 })
 export class AuthService {
+    currentUser$ = authState(this.auth);
+
     constructor(private auth: Auth) {}
 
     register({ ...request }): Observable<any> {
+        console.log(request);
+
         return from(
             createUserWithEmailAndPassword(this.auth, request.email, request.password),
+        ).pipe(
+            switchMap(({ user }) =>
+                updateProfile(user, { displayName: request.username }),
+            ),
         );
     }
 

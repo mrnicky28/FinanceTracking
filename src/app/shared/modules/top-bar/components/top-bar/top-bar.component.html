@@ -29,8 +29,17 @@
                     </div>
                 </div>
             </div>
-            <div class="btn btn-login" (click)="signIn()">Log in</div>
-            <div class="btn btn-register" (click)="signUp()">Sign up</div>
+            <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
+                <div class="btn" [mat-menu-trigger-for]="userMenu">
+                    {{user.displayName}}
+                </div>
+
+
+            </ng-container>
+            <ng-template #loginButton>
+                <div class="btn btn-login" (click)="signIn()">Log in</div>
+                <div class="btn btn-register" (click)="signUp()">Sign up</div>
+            </ng-template>
         </div>
 
     </div>
@@ -44,3 +53,9 @@
 
     </div>
 </div> -->
+<mat-menu #userMenu="matMenu">
+    <div>Profile</div>
+    <div>Update profile</div>
+    <div>Settings</div>
+    <div (click)="logOut()">Log out</div>
+</mat-menu>

@@ -7,6 +7,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { AuthService } from '../../services/authentication/auth.service';
@@ -22,30 +23,40 @@ export class RegisterEffect {
         private persistanceService: PersistanceService,
         private router: Router,
         public dialog: MatDialog,
+        private toast: HotToastService,
     ) {}
 
     register$ = createEffect(() =>
         this.actions$.pipe(
             ofType(registerAction),
             switchMap(({ request }) => {
-                return this.authService.register(request).pipe(
-                    map((currentUser: CurrentUserInterface) => {
-                        this.persistanceService.set(
-                            'accessToken',
-                            currentUser.user.accessToken,
-                        );
-                        return registerSuccessAction({ currentUser });
-                    }),
-                    catchError((errorResponse: HttpErrorResponse) => {
-                        return of(
-                            registerFailureAction({
-                                error: [
-                                    errorResponse.message.split('(')[1].split(')')[0],
-                                ],
-                            }),
-                        );
-                    }),
-                );
+                return this.authService
+                    .register(request)
+                    .pipe(
+                        this.toast.observe({
+                            success: 'Congrats! You are all signed up',
+                            loading: 'Signing in...',
+                            error: ({ message }) => `${message}`,
+                        }),
+                    )
+                    .pipe(
+                        map((currentUser: CurrentUserInterface) => {
+                            this.persistanceService.set(
+                                'accessToken',
+                                currentUser.user.accessToken,
+                            );
+                            return registerSuccessAction({ currentUser });
+                        }),
+                        catchError((errorResponse: HttpErrorResponse) => {
+                            return of(
+                                registerFailureAction({
+                                    error: [
+                                        errorResponse.message.split('(')[1].split(')')[0],
+                                    ],
+                                }),
+                            );
+                        }),
+                    );
             }),
         ),
     );

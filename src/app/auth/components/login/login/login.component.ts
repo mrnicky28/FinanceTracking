@@ -6,6 +6,7 @@ import {
 } from 'src/app/auth/store/selector';
 
 import { Component, OnInit } from '@angular/core';
+import { Auth, authState } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -24,6 +25,8 @@ export class LoginComponent implements OnInit {
     isSubmitting$!: Observable<boolean>;
     isLoading$!: Observable<boolean>;
     backendErrors$!: Observable<string[] | null>;
+
+
 
     constructor(
         private dialog: MatDialog,

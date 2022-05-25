@@ -8,6 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { AuthService } from '../../services/authentication/auth.service';
@@ -21,30 +22,40 @@ export class LoginEffect {
         private actions$: Actions,
         private authService: AuthService,
         private persistanceService: PersistanceService,
+        private toast: HotToastService,
     ) {}
 
     login$ = createEffect(() =>
         this.actions$.pipe(
             ofType(loginAction),
             switchMap(({ request }) => {
-                return this.authService.login(request).pipe(
-                    map((currentUser: CurrentUserInterface) => {
-                        this.persistanceService.set(
-                            'accessToken',
-                            currentUser.user.accessToken,
-                        );
-                        return loginSuccessAction({ currentUser });
-                    }),
-                    catchError((errorResponse: HttpErrorResponse) => {
-                        return of(
-                            loginFailureAction({
-                                error: [
-                                    errorResponse.message.split('(')[1].split(')')[0],
-                                ],
-                            }),
-                        );
-                    }),
-                );
+                return this.authService
+                    .login(request)
+                    .pipe(
+                        this.toast.observe({
+                            success: 'Logged in successfully',
+                            loading: 'Loggung in...',
+                            error: 'There was an error',
+                        }),
+                    )
+                    .pipe(
+                        map((currentUser: CurrentUserInterface) => {
+                            this.persistanceService.set(
+                                'accessToken',
+                                currentUser.user.accessToken,
+                            );
+                            return loginSuccessAction({ currentUser });
+                        }),
+                        catchError((errorResponse: HttpErrorResponse) => {
+                            return of(
+                                loginFailureAction({
+                                    error: [
+                                        errorResponse.message.split('(')[1].split(')')[0],
+                                    ],
+                                }),
+                            );
+                        }),
+                    );
             }),
         ),
     );

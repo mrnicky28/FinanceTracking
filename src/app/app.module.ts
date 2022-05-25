@@ -6,6 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HotToastModule } from '@ngneat/hot-toast';
 import { EffectsModule } from '@ngrx/effects';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
@@ -28,7 +29,6 @@ import { CurrencyTickerModule } from './shared/modules/currency-ticker/currency-
 import { MaterialModule } from './shared/modules/material/material.module';
 import { PromoCarouselModule } from './shared/modules/promo-carousel/promo-carousel.module';
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
-import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
     declarations: [AppComponent],

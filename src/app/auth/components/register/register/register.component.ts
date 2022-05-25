@@ -9,6 +9,7 @@ import { MatchPasswordValidator } from 'src/app/auth/validators/matchPassword.va
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 
 import { LoginComponent } from '../../login/login/login.component';
@@ -24,7 +25,12 @@ export class RegisterComponent implements OnInit {
     isLoading$!: Observable<boolean>;
     backendErrors$!: Observable<string[] | null>;
 
-    constructor(private fb: FormBuilder, private store: Store, private dialog: MatDialog) {}
+    constructor(
+        private fb: FormBuilder,
+        private store: Store,
+        private dialog: MatDialog,
+        private router: Router,
+    ) {}
 
     ngOnInit(): void {
         this.initializeForm();
@@ -46,7 +52,9 @@ export class RegisterComponent implements OnInit {
                 confirmPassword: [null, [Validators.required]],
             },
             {
-                validators: [MatchPasswordValidator.matchPassword('password', 'confirmPassword')],
+                validators: [
+                    MatchPasswordValidator.matchPassword('password', 'confirmPassword'),
+                ],
             },
         );
     }
@@ -59,6 +67,8 @@ export class RegisterComponent implements OnInit {
         };
         this.store.dispatch(registerAction({ request }));
         this.registerForm.reset();
+        this.router.navigate(['/home']);
+        this.dialog.closeAll();
     }
 
     onClose(): void {
