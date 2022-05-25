@@ -1,25 +1,103 @@
-.block {
-    height: 45px;
-    width: 450px;
-    margin: 10px;
-    background: #fff;
-    overflow: hidden;
+.container{
+    max-width: 1276px;
+    padding: 0 30px;
+    width: 100%;
+    margin: 0 auto;
 }
-.block p {
-    text-align: center;
-    color: #000;
-    text-transform: uppercase;
-    padding-top: 10px;
-    animation: text 5s infinite linear;
-    padding-left: 100%;
-    white-space: nowrap;
-}
-@keyframes text {
-    0% {
-        transform: translate(0, 0);
-    }
 
-    100% {
-        transform: translate(-160%, 0);
+.block {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+}
+.card {
+    padding: 20px;
+    background-color: #fff;
+    border: solid 1px #c6c6c6c5;
+    border-radius: 25px;
+    height: 150px;
+    color: #1d1429;
+    display: flex;
+    margin-right: 20px;
+    box-shadow: 2px 2px 2px rgba(212, 212, 212, 0.268);
+}
+.section-title{
+    font-family: Raleway, 'sans-serif';
+    font-weight: 600;
+    font-size: 28px;
+    color: #0D3E36;
+}
+
+.top-card-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 45%;
+        width: 85%;
+        height: 1px;
+        background-color: #c6c6c6c5;
     }
 }
+
+.currency-symbol {
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+.currency-name {
+    padding: 5px;
+    background-color: #c6c6c6;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.currency-price{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.currency-change{
+    font-size: 14px;
+    font-weight: 500;
+}
+.row-item {
+    display: flex;
+    margin-right: 20px;
+}
+.currency-image {
+    margin-right: 10px;
+}
+// .second-section-wrapper {
+//     width: 100%;
+//     // background-color: #0D3E36;
+// }
+.bottom-card-section{
+    display: flex;
+    justify-content: space-between;
+}
+.currency-information{
+    margin-right: 10px;
+}
+.red{
+    background-image: url('../../../../../../assets/icons/minus.png');
+    width: 100px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.green{
+    background-image: url('../../../../../../assets/icons/plus.png');
+    width: 100px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+

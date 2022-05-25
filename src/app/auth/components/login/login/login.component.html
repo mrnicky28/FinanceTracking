@@ -10,7 +10,7 @@
                             alt=""
                         />
                     </a>
-                    <h1 class="text-xs-center modal-title">Войти</h1>
+                    <h1 class="text-xs-center modal-title">Sign in</h1>
 
                     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <fieldset>
@@ -18,17 +18,17 @@
                                 <input
                                     type="email"
                                     class="input-control"
-                                    placeholder="Электронный адрес"
+                                    placeholder="Email address"
                                     formControlName="email"
                                 />
                                 <mat-error class="validation-errors"
                                     *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
                                     <mat-error class="validation-errors"
                                         *ngIf="loginForm.get('email')?.errors?.required">
-                                        Поле email не должно быть пустым.
+                                        The email field must not be empty.
                                     </mat-error>
                                     <mat-error class="validation-errors"
-                                        *ngIf="loginForm.get('email')?.errors?.email">Введите корректный email
+                                        *ngIf="loginForm.get('email')?.errors?.email">Enter a valid email
                                     </mat-error>
                                 </mat-error>
                             </fieldset>
@@ -36,20 +36,20 @@
                                 <input
                                     type="password"
                                     class="input-control"
-                                    placeholder="Пароль"
+                                    placeholder="Password"
                                     formControlName="password"
                                 />
                                 <mat-error class="validation-errors"
                                     *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
                                     <mat-error class="validation-errors"
                                         *ngIf="loginForm.get('password')?.errors?.required">
-                                        Поле пароль не должно быть пустым.
+                                        The password field must not be empty.
                                     </mat-error>
                                     <mat-error class="validation-errors"
-                                        *ngIf="loginForm.get('password')?.errors?.minlength">Поле пароль должно
-                                        привышать
+                                        *ngIf="loginForm.get('password')?.errors?.minlength">The password field must
+                                        used to
                                         {{ loginForm.get("password")?.errors?.minlength?.requiredLength }}
-                                        символов</mat-error>
+                                        symbols</mat-error>
                                 </mat-error>
                             </fieldset>
                             <div *ngIf="!loginForm.pristine; else errorsBlock"></div>
@@ -58,18 +58,18 @@
                                 </app-backend-error-messages>
                             </ng-template>
                             <p class="text-xs-center">
-                                Нет аккаунта?
+                                No account?
                                 <a
                                     class="toggle-link"
                                     (click)="redirectToSignUp()"
-                                    >Зарегистрироваться</a
+                                    >Sign up</a
                                 >
                             </p>
                             <button
                                 class="btn btn-lg btn-primary pull-xs-right"
                                 type="submit"
                                 [disabled]="loginForm.invalid || (isSubmitting$ | async)">
-                                Далее
+                                Next
                             </button>
                         </fieldset>
                     </form>

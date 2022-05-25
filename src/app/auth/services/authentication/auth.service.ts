@@ -17,8 +17,14 @@ export class AuthService {
         );
     }
 
-    login({...request}): Observable<any> {
-        return from(signInWithEmailAndPassword(this.auth, request.email, request.password));
+    login({ ...request }): Observable<any> {
+        return from(
+            signInWithEmailAndPassword(this.auth, request.email, request.password),
+        );
+    }
+
+    logout() {
+        return from(this.auth.signOut());
     }
 
     private setToken(response: any): void {

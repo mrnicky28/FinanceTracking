@@ -1,4 +1,4 @@
-<ngb-carousel *ngIf="images" [showNavigationArrows]="false">
+<ngb-carousel class="carousel-section" *ngIf="images" [showNavigationArrows]="false">
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
             <img class="img-carousel" src="../../../../../../assets/img/1.jpg" alt="Random first slide">
@@ -7,14 +7,14 @@
         <div class="carousel-caption">
             <div class="container">
                 <div class="banner-title-wrapper">
-                    <h3 class="banner-title">Торгуйте криптовалютой.</h3>
-                    <h3 class="banner-title">Просто и безопасно.</h3>
+                    <h3 class="banner-title">Trade cryptocurrency.</h3>
+                    <h3 class="banner-title">Easy and safe.</h3>
                 </div>
                 <div class="banner-description-wrapper">
-                    <p class="banner-description">Ультросовременная платформа.</p>
-                    <p class="banner-description">Надёжное регулирование.</p>
+                    <p class="banner-description">Ultra-modern platform.</p>
+                    <p class="banner-description">Reliable regulation.</p>
                 </div>
-                <button class="btn btn-banner">Приступить к торговле</button>
+                <button class="btn btn-banner">Start trading</button>
             </div>
         </div>
     </ng-template>
@@ -25,12 +25,12 @@
         <div class="carousel-caption">
             <div class="container">
                 <div class="banner-title-wrapper">
-                    <h3 class="banner-title">Торгуйте биткойном со 100-кратным левереджем.</h3>
+                    <h3 class="banner-title">Trade bitcoin at 100 times leverage.</h3>
                 </div>
                 <div class="banner-description-wrapper">
-                    <p class="banner-description">Начтните с 0.001 BTC. Узкие спреды. Никаких скрытых комиссий.</p>
+                    <p class="banner-description">Start at 0.001 BTC. Narrow spreads. No hidden fees.</p>
                 </div>
-                <button class="btn btn-banner">Приступить к торговле</button>
+                <button class="btn btn-banner">Start trading</button>
             </div>
         </div>
     </ng-template>
@@ -41,12 +41,29 @@
         <div class="carousel-caption">
             <div class="container">
                 <div class="banner-title-wrapper">
-                    <h3 class="banner-title">Используйте волатильность.</h3>
+                    <h3 class="banner-title">Use volatility.</h3>
                 </div>
                 <div class="banner-description-wrapper">
-                    <p class="banner-description">Торгуйте безопасно и быстро.</p>
+                    <p class="banner-description">Trade safely and quickly.</p>
                 </div>
-                <button class="btn btn-banner">Торговать сейчас</button>
+                <button class="btn btn-banner">Trade now</button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img class="img-carousel" src="../../../../../../assets/img/3.png" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+            <div class="container">
+                <div class="banner-title-wrapper">
+                    <h3 class="banner-title">Start and Build Your Crypto Portfolio Here</h3>
+                </div>
+                <div class="banner-description-wrapper">
+                    <p class="banner-description">Only at FinanceTracking, you can build a good portfolio and learn
+                        best practices about cryptocurrency.</p>
+                </div>
+                <button class="btn btn-banner">Get Started</button>
             </div>
         </div>
     </ng-template>

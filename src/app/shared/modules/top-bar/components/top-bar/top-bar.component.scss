@@ -1,9 +1,12 @@
 .top-bar-wrapper{
     width: 100%;
-    background-color: #232425;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
 
+}
+.second-word-logo{
+color: #0FAE96;
 }
 .container{
     max-width: 1276px;
@@ -12,13 +15,14 @@
     margin: 0 auto;
 }
 .header{
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 nav ul{
 list-style: none;
-background-color: #232425;
+background-color: transparent;
 }
 
 nav > ul > li {
@@ -43,10 +47,10 @@ nav ul::after{
     display: flex;
     padding: 10px 0 15px;
     font-size: 14px;
-    text-transform: uppercase;
+    font-family: Raleway;
     font-weight: 700;
     text-decoration: none;
-    color: #bbbdbf;
+    color: #0D3E36;
 }
 .topmenu > li {
     margin-right: 20px;
@@ -55,14 +59,8 @@ nav ul::after{
     padding: 10px 0 10px 5px;
 }
 
-.topmenu li .submenu li a:hover{
-    border-radius: 3px;
-    background-color: rgba(207, 207, 207, 0.29);
-    color: #ffffff;
-}
-
 nav ul li a:hover{
-    color: #ffffff;
+    color: #0FAE96;
 }
 
 nav ul ul{
@@ -92,23 +90,23 @@ nav ul li:hover ul{
     border-radius: 10px;
     text-transform: uppercase;
     text-decoration: none;
-	color: #00c46b;
+	color: #0FAE96;
 	background-color: #fff;
     font-weight: 700;
 }
 
 .btn-login{
     background-color: transparent;
-    border: #00c46b 1px solid;
+    border: #0FAE96 1px solid;
     margin-right: 8px;
 }
 .btn-register{
-    color: #232425;
-    background-color: #00c46b;
+    color: #0D3E36;
+    background-color: #0FAE96;
 }
 
 .btn-select{
-    background-color: #232425;
+    background-color: #0D3E36;
     color: #fff;
     width: 100px;
 }
@@ -119,7 +117,7 @@ nav ul li:hover ul{
 
 .second-section-wrapper{
     width: 100%;
-    background-color: #232425;
+    background-color: #0D3E36;
 }
 .second-header-container{
     display: flex;
@@ -127,11 +125,17 @@ nav ul li:hover ul{
 }
 
 .logo{
-    color: #fff;
+
+    color: #0D3E36;
     font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-weight: 600;
     margin-right: 20px;
+    a{
+        font-family: Raleway, 'sans-serif';
+        font-weight: bold;
+        text-decoration: none;
+        color: #0D3E36;
+    }
 }
 .about{
     color: #fff;

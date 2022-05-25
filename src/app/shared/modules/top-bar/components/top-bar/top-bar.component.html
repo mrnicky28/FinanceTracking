@@ -1,47 +1,46 @@
 <div class="top-bar-wrapper">
     <div class="container header">
+        <div class="logo">
+            <a routerLink="/home"> Finance<span class="second-word-logo">Tracking</span></a>
+        </div>
         <nav>
             <ul class="topmenu">
-                <li><a class="submenu-link" href="#home">Рынки</a>
-                    <ul class="submenu">
-                        <li><a href="">Криптовалюта</a></li>
-                        <li><a href="">Валюты</a></li>
-                        <li><a href="">Акции</a></li>
-                        <li><a href="">Товары</a></li>
-                    </ul>
+                <li><a class="submenu-link" routerLink="/cryptocurrency-list">Cryptocurrency</a>
                 </li>
-                <li><a href="#news">Новости и аналитика</a></li>
-                <li><a href="#news">Обучение трейдингу</a></li>
-                <li><a href="#about us">О нас</a></li>
+                <li><a href="news">News & Analysis</a></li>
+                <li><a href="news">Learning to trade</a></li>
+                <li><a href="about us">About Us</a></li>
             </ul>
         </nav>
 
         <div class="auth-btns">
-            <a class="btn btn-login" (click)="signIn()">Войти</a>
-            <a class="btn btn-register" (click)="signUp()">Регистрация</a>
+            <div class="language">
+                <div class="row">
+                    <div class="col">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn" id="dropdownBasic1" ngbDropdownToggle> <img width="26"
+                                    src="../../../../../../assets/icons/language.png" alt="lng"></button>
+                            <div class="option-element" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem>RU</button>
+                                <button ngbDropdownItem>EN</button>
+                                <button ngbDropdownItem>DE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn btn-login" (click)="signIn()">Log in</div>
+            <div class="btn btn-register" (click)="signUp()">Sign up</div>
         </div>
 
     </div>
 </div>
-<div class="second-section-wrapper">
+<!-- <div class="second-section-wrapper">
     <div class="container second-header-container">
-        <div class="logo">
-            Finance Tracking
-        </div>
         <div class="about">Pегулируемая криптобиржа снг</div>
-        <div class="currency-ticker"><app-currency-ticker></app-currency-ticker></div>
-        <div class="language">
-            <div class="row">
-                <div class="col">
-                  <div ngbDropdown class="d-inline-block">
-                    <button class="btn btn-outline-primary btn-select" id="dropdownBasic1" ngbDropdownToggle>Language</button>
-                    <div class="option-element" ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                      <button ngbDropdownItem>RU</button>
-                      <button ngbDropdownItem>EN</button>
-                      <button ngbDropdownItem>DE</button>
-                    </div>
-                  </div>
-                </div>
-            </div>
+        <div class="currency-ticker">
+            <app-currency-ticker></app-currency-ticker>
+        </div>
+
     </div>
-</div>
+</div> -->

@@ -1,1 +1,30 @@
-<div class='block'><p>Бегущая строка курсов</p></div>
+<div class="second-section-wrapper">
+    <div class="container">
+        <div class="section-title">Market Trend</div>
+        <div class="currency-ticker">
+            <marquee class="block" behavior="scroll"  scrollamount="4" loop="-1">
+    <div class="row-item">
+        <div class="card" *ngFor="let currency of currensies">
+            <div class="top-card-section">
+                <img class="currency-image" src="{{currency.image}}" width="50" alt="">
+                <div class="currency-symbol">{{currency.symbol}}</div>
+                <div class="currency-name">{{currency.name}}</div>
+            </div>
+            <div class="bottom-card-section">
+                <div class="currency-information">
+                    <div class="currency-price">{{currency.current_price | currency}} </div>
+                    <div class="currency-change">{{currency.market_cap_change_percentage_24h}}%</div>
+                </div>
+                <div class="currency-change-percentage">
+                    <div [ngClass]="
+                    {red: currency.market_cap_change_percentage_24h < 0,
+                    green: currency.market_cap_change_percentage_24h > 0}"></div>
+                </div>
+                </div>
+        </div>
+    </div>
+</marquee>
+        </div>
+
+    </div>
+</div>

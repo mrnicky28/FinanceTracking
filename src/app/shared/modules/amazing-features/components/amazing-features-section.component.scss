@@ -1,0 +1,42 @@
+.container {
+    max-width: 1276px;
+    padding: 0 30px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height, or 122% */
+
+    text-align: center;
+    font-feature-settings: "salt" on, "liga" off;
+
+    /* Font Color/Title Color */
+
+    color: #0d3e36;
+}
+
+.section-description {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    /* identical to box height, or 29px */
+
+    text-align: center;
+    font-feature-settings: "salt" on, "liga" off;
+
+    /* Font Color/Subtitle Color */
+
+    color: #4d625f;
+}
+
+.header-section-container{
+    margin-bottom: 70px;
+}

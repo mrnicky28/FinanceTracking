@@ -1,0 +1,76 @@
+<div class="banner-crypto-list">
+    <div class="container">
+        <h1 class="banner-title">Cryptocurrency</h1>
+        <p class="banner-description">Trade more than 150 tokens. Increase your crypto assets in Bitcoin and Ethereum.</p>
+    </div>
+</div>
+<div class="container">
+    <input class="search-input-cryptocurrency" type="" placeholder="Cryptocurrency name" matInput (keyup)="applyFilter($event)">
+    <!-- <table class="table">
+        <thead class="thead">
+            <tr>
+                <th class="name">Имя</th>
+                <th class="price">Цена</th>
+                <th class="price-change">Изменение за 24 ч</th>
+                <th class="market-cap">Рыночная капитализация</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="test" *ngFor="let item of currensies">
+                <td class="td-name"><img class="currency-image" src="{{item.image}}" width="30" alt="">{{item.name}}</td>
+                <td class="td-current-price">{{item.current_price | currency}}</td>
+                <td class="td-price-change">{{item.price_change_percentage_24h}}%</td>
+                <td class="td-market-cap">{{item.market_cap | currency}}</td>
+            </tr>
+        </tbody>
+    </table> -->
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+                Name
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <img class="currency-image" src="{{element.image}}" width="50" alt="">
+                <div class="block-currency-name">
+                    <p class="currency-symbol">{{element.symbol | uppercase}}</p>
+                    <p class="currency-fullname">
+                        {{element.name}}
+                    </p>
+                </div>
+            </td>
+        </ng-container>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by price">
+                Price
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.current_price | currency}} </td>
+        </ng-container>
+
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="price-change">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by price-change">
+                Change in 24 hours
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.price_change_percentage_24h}}% </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="market_cap">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by market_cap">
+                Market capitalization
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.market_cap | currency}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr class="test" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 20, 25]" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
+</div>

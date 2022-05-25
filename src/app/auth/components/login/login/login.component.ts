@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { select, Store } from '@ngrx/store';
 
 import { RegisterComponent } from '../../register/register/register.component';
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private fb: FormBuilder,
         private store: Store,
+        private toast: HotToastService,
     ) {}
 
     ngOnInit(): void {
@@ -56,6 +58,7 @@ export class LoginComponent implements OnInit {
         };
         this.store.dispatch(loginAction({ request }));
         this.loginForm.reset();
+        this.router.navigate(['/home']);
     }
 
     onClose(): void {

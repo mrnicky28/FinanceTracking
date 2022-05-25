@@ -7,53 +7,52 @@
                 <div class="content-wrapper">
                     <a class="bg-close-icon" (click)="onClose()"><img class="close-icon"
                             src="../../../../../assets/icons/close-icon.png" alt="" /></a>
-                    <h1 class="text-xs-center modal-title">Регистрация</h1>
+                    <h1 class="text-xs-center modal-title">Sign up</h1>
 
                     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <fieldset>
                             <fieldset class="form-group">
-                                <input type="text" class="input-control" placeholder="Имя" formControlName="username" />
+                                <input type="text" class="input-control" placeholder="Name" formControlName="username" />
                                 <mat-error class="validation-errors"
                                     *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid">
                                     <mat-error class="validation-errors"
                                         *ngIf="registerForm.get('username')?.errors?.required">
-                                        Поле имя не должно быть пустым.
+                                        The name field must not be empty.
                                     </mat-error>
                                     <mat-error class="validation-errors"
-                                        *ngIf="registerForm.get('username')?.errors?.maxlength">Поле не должно привышать
+                                        *ngIf="registerForm.get('username')?.errors?.maxlength">The field must not exceed
                                         {{ registerForm.get("username")?.errors?.maxlength.requiredLength }}
-                                        символов.
+                                        symbols.
                                     </mat-error>
                                 </mat-error>
                             </fieldset>
                             <fieldset class="form-group">
-                                <input type="email" class="input-control" placeholder="Электронный адрес"
+                                <input type="email" class="input-control" placeholder="Email address"
                                     formControlName="email" />
                                 <mat-error class="validation-errors"
                                     *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
                                     <mat-error class="validation-errors"
                                         *ngIf="registerForm.get('email')?.errors?.required">
-                                        Поле email не должно быть пустым.
+                                        The email field must not be empty.
                                     </mat-error>
                                     <mat-error class="validation-errors"
-                                        *ngIf="registerForm.get('email')?.errors?.email">Введите корректный email
+                                        *ngIf="registerForm.get('email')?.errors?.email">Enter a valid email
                                     </mat-error>
                                 </mat-error>
                             </fieldset>
                             <fieldset class="form-group">
-                                <input type="password" class="input-control" placeholder="Пароль"
+                                <input type="password" class="input-control" placeholder="Password"
                                     formControlName="password" />
                                 <mat-error class="validation-errors"
                                     *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
                                     <mat-error class="validation-errors"
                                         *ngIf="registerForm.get('password')?.errors?.required">
-                                        Поле пароль не должно быть пустым.
+                                        The password field must not be empty.
                                     </mat-error>
                                     <mat-error class="validation-errors"
-                                        *ngIf="registerForm.get('password')?.errors?.minlength">Поле пароль должно
-                                        привышать
+                                        *ngIf="registerForm.get('password')?.errors?.minlength">The password field must used to
                                         {{ registerForm.get("password")?.errors?.minlength?.requiredLength }}
-                                        символов</mat-error>
+                                        symbols</mat-error>
                                 </mat-error>
                             </fieldset>
                             <fieldset class="form-group">
@@ -61,19 +60,18 @@
                                     [style.border]="(registerForm?.errors?.noMatch && registerForm.get('confirmPassword')?.touched) ? '0.4px solid #f10000' : '0.4px solid #00c46b'"
                                     [style.border]=" registerForm.get('confirmPassword')?.untouched ? '0.4px solid #fff' : ''"
 
-                                    placeholder="Подтвердите пароль" formControlName="confirmPassword" />
+                                    placeholder="Confirm password" formControlName="confirmPassword" />
                                 <mat-error class="validation-errors"
                                     *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid">
                                     <mat-error class="validation-errors"
                                         *ngIf="registerForm.get('confirmPassword')?.errors?.required">
-                                        Поле подтверждения пароля не должно быть пустым.
+                                        The password confirmation field must not be empty.
                                     </mat-error>
                                 </mat-error>
                                 <mat-error class="validation-errors"
                                     *ngIf="registerForm.get('confirmPassword')?.touched"
                                 >
-                                    <mat-error class="validation-errors" *ngIf="registerForm?.errors?.noMatch">Пароль не
-                                        совпадает</mat-error>
+                                    <mat-error class="validation-errors" *ngIf="registerForm?.errors?.noMatch">Password does not match</mat-error>
                                 </mat-error>
                             </fieldset>
                             <div *ngIf="!registerForm.pristine; else errorsBlock"></div>
@@ -82,12 +80,12 @@
                                 </app-backend-error-messages>
                             </ng-template>
                             <p class="text-xs-center">
-                                У вас уже есть аккаунт?
-                                <a class="toggle-link" (click)="redirectToLogin()">Войти</a>
+                                Do you already have an account?
+                                <a class="toggle-link" (click)="redirectToLogin()">Log in</a>
                             </p>
                             <button class="btn btn-lg btn-primary pull-xs-right" type="submit"
                                 [disabled]="registerForm.invalid || (isSubmitting$ | async)">
-                                Далее
+                                Next
                             </button>
                         </fieldset>
                     </form>
