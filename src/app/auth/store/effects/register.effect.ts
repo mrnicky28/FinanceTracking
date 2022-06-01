@@ -1,6 +1,5 @@
 import { of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
-import { CurrentUserInterface } from 'src/app/shared/interfaces/currentUser.interface';
 import { PersistanceService } from 'src/app/shared/services/persistance/persistance.service';
 import {
     UpdateProfileService
@@ -34,7 +33,6 @@ export class RegisterEffect {
         this.actions$.pipe(
             ofType(registerAction),
             switchMap(({ request }) => {
-                console.log(request);
                 return this.authService
                     .register(request)
                     .pipe(
@@ -51,9 +49,8 @@ export class RegisterEffect {
                             error: ({ message }) => `${message}`,
                         }),
                     )
-
                     .pipe(
-                        map((currentUser: CurrentUserInterface) => {
+                        map((currentUser: any) => {
                             this.persistanceService.set(
                                 'accessToken',
                                 currentUser.user.accessToken,

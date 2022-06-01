@@ -15,17 +15,11 @@ export class AuthService {
 
     constructor(private auth: Auth) {}
 
-    register({ ...request }): Observable<any> {
-        console.log(request);
 
+    register({ ...request }): Observable<any> {
         return from(
             createUserWithEmailAndPassword(this.auth, request.email, request.password),
         );
-        // .pipe(
-        //     switchMap(({ user }) =>
-        //         updateProfile(user, { displayName: request.username }),
-        //     ),
-        // );
     }
 
     login({ ...request }): Observable<any> {

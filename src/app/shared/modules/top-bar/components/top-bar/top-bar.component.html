@@ -14,25 +14,7 @@
         </nav>
 
         <div class="auth-btns">
-            <!-- <div class="language">
-                <div class="row">
-                    <div class="col">
-                        <div ngbDropdown class="d-inline-block">
-                            <button class="btn" id="dropdownBasic1" ngbDropdownToggle> <img width="26"
-                                    src="../../../../../../assets/icons/language.png" alt="lng"></button>
-                            <div class="option-element" ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                <button ngbDropdownItem>RU</button>
-                                <button ngbDropdownItem>EN</button>
-                                <button ngbDropdownItem>DE</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
-                <!-- <div class="user-name" [mat-menu-trigger-for]="userMenu">
-                    {{user.displayName}}
-                </div> -->
+            <ng-container *ngIf="user$| async as user; else loginButton">
                 <img class="profile-imge-topbar"
                 width="45"
                 height="45"
@@ -52,18 +34,8 @@
 
     </div>
 </div>
-<!-- <div class="second-section-wrapper">
-    <div class="container second-header-container">
-        <div class="about">Pегулируемая криптобиржа снг</div>
-        <div class="currency-ticker">
-            <app-currency-ticker></app-currency-ticker>
-        </div>
-
-    </div>
-</div> -->
 <mat-menu class="profile-menu" #userMenu="matMenu">
     <div class="profile-menu-item" routerLink="/profile">Profile</div>
-    <div class="profile-menu-item">Update profile</div>
     <div class="profile-menu-item">Settings</div>
     <div class="profile-menu-item" (click)="logOut()">Log out</div>
 </mat-menu>

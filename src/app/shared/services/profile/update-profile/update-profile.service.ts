@@ -10,29 +10,28 @@ import { doc, docData, Firestore, setDoc, updateDoc } from '@angular/fire/firest
     providedIn: 'root',
 })
 export class UpdateProfileService {
+    constructor(private firestore: Firestore, private authService: AuthService) {}
+
     get currentUserProfile$(): Observable<ProfileUser | null> {
         return this.authService.currentUser$.pipe(
             switchMap((user) => {
                 if (!user?.uid) {
                     return of(null);
                 }
+
                 const ref = doc(this.firestore, 'users', user?.uid);
                 return docData(ref) as Observable<ProfileUser>;
             }),
         );
     }
 
-    constructor(private firestore: Firestore, private authService: AuthService) {}
-
-    addUser(user: any): Observable<any> {
-        console.log('addUser', user);
-
-        const ref = doc(this.firestore, 'user', user?.uid);
+    addUser(user: ProfileUser): Observable<void> {
+        const ref = doc(this.firestore, 'users', user.uid);
         return from(setDoc(ref, user));
     }
 
-    updateUser(user: ProfileUser): Observable<any> {
-        const ref = doc(this.firestore, 'user', user?.uid);
+    updateUser(user: ProfileUser): Observable<void> {
+        const ref = doc(this.firestore, 'users', user.uid);
         return from(updateDoc(ref, { ...user }));
     }
 }

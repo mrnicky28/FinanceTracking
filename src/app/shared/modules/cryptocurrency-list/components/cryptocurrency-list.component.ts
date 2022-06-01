@@ -34,21 +34,8 @@ export class CryptocurrencyListComponent implements OnInit {
             this.currensies = res;
             this.dataSource = new MatTableDataSource(res);
             this.dataSource.paginator = this.paginator;
-            this.dataSource.sort = this.sort;
         });
     }
-
-    ngAfterViewInit() {
-        this.dataSource.sort = this.sort;
-    }
-
-    // announceSortChange(sortState: Sort) {
-    //     if (sortState.direction) {
-    //         this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    //     } else {
-    //         this._liveAnnouncer.announce('Sorting cleared');
-    //     }
-    // }
 
     applyFilter(event: Event) {
         const filterValue = (event.target as HTMLInputElement).value;

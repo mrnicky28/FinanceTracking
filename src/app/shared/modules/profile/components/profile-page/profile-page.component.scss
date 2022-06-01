@@ -6,10 +6,23 @@
 }
 
 .user-profile-container{
-    padding: 20px;
-    width: 400px;
+    padding: 30px;
+    width: 100%;
     background-color: rgba(245, 245, 245, 0.597);
     border-radius: 20px;
+}
+
+.profile-info{
+    display: flex;
+}
+
+.full-name{
+    font-family: Raleway, "sans-serif";
+    font-weight: bold;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+    color: #0d3e36;
 }
 
 .profile-image > img {
@@ -20,15 +33,20 @@
 
 .profile-image{
     position: relative;
+    margin-right: 20px;
 
 }
 .profile-image > button {
     position: absolute;
-    bottom: 10px;
-    right: 65%;
+    bottom: 5px;
+    right: 1%;
+}
+
+.add-photo-icon{
+    background-color: #0fae96;
 }
 .form-container {
-    max-width: 400px;
+    max-width: 100%;
 }
 .row{
     display: flex;
@@ -37,6 +55,7 @@
 
 .form-group {
     margin-bottom: 10px;
+    width: 400px;
 }
 
 .input-control{
@@ -53,15 +72,50 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 13px;
-    height: 32px;
+    font-family: Raleway, "sans-serif";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    width: 128px;
+    height: 42px;
     padding: 0 16px;
     outline: none;
     border: none;
     border-radius: 10px;
-    text-transform: uppercase;
+    letter-spacing: 1.2px;
     text-decoration: none;
-    color: #0fae96;
-    background-color: #fff;
-    font-weight: 700;
+    color: #ffffff;
+    background-color: #0fae96;
+    &:hover{
+        background-color: #0b7b6a;
+    }
 }
+
+.personal-settings{
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 60px;
+}
+
+.setting-title{
+
+    font-family: Raleway, "sans-serif";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #CACED8;
+}
+
+label{
+    font-family: Raleway, "sans-serif";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #083A50;
+    margin-bottom: 5px;
+}
+// .input-control{
+//     width: 200px;
+// }

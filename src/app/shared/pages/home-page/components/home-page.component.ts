@@ -24,8 +24,6 @@ export class HomePageComponent implements OnInit {
     getCurrencyDataTicker() {
         this.currencyDataService.getCurrencies('usd').subscribe((res) => {
             this.currensies = res.slice(0, 10);
-            console.log(this.currensies);
-
             this.dataSource = new MatTableDataSource(this.currensies);
         });
     }

@@ -31,22 +31,22 @@ export class BackendErrorMessagesComponent implements OnInit {
         switch (this.errorMessage[0]) {
             case 'auth/invalid-email':
                 this.error$.subscribe((response) => this.errors.push(response));
-                this.error$.next('Такого email не существует. Введите email ещё раз.');
+                this.error$.next('That email does not exist. Enter the email again.');
                 break;
 
             case 'auth/email-already-in-use':
                 this.error$.subscribe((response) => this.errors.push(response));
-                this.error$.next('Такой email уже существует.');
+                this.error$.next('Such an email already exists.');
                 break;
 
             case 'auth/user-not-found':
                 this.error$.subscribe((response) => this.errors.push(response));
-                this.error$.next('Такого пользователя не существует.');
+                this.error$.next('There is no such user.');
                 break;
 
             case 'auth/wrong-password':
                 this.error$.subscribe((response) => this.errors.push(response));
-                this.error$.next('Введён неверный пароль.');
+                this.error$.next('The password you entered is incorrect.');
                 break;
         }
     }
