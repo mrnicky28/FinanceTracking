@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="user-profile-container" *ngIf="user$ | async as user">
+        <h1>User Profile</h1>
+        <div class="profile-image">
+            <img
+                width="120"
+                height="120"
+                [src]="user.photoURL ?? 'assets/icons/user-image.png'"
+                alt="profile-image"
+            />
+            <button mat-mini-fab (click)="inputField.click()">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </div>
+        <input #inputField type="file" hidden (change)="uploadImage($event, user)" />
+
+        <form class="margin-top" [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+            <div class="row">
+                <fieldset>
+                    <fieldset class="form-group">
+                        <input type="text" class="input-control"
+                            placeholder="First Name"
+                            formControlName="firstName"
+                        />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input
+                            type="text"
+                            class="input-control"
+                            placeholder="Surname"
+                            formControlName="surname"
+                        />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input
+                            type="email"
+                            class="input-control"
+                            placeholder="Display Name"
+                            formControlName="username"
+                        />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input
+                            type="email"
+                            class="input-control"
+                            placeholder="Date of birth"
+                            formControlName=""
+                        />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input
+                            type="password"
+                            class="input-control"
+                            placeholder="Phone Number"
+                            formControlName="phone"
+                        />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input
+                            type="password"
+                            class="input-control"
+                            placeholder="Country"
+                            formControlName="country"
+                        />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input
+                            type="password"
+                            class="input-control"
+                            placeholder="City"
+                            formControlName="city"
+                        />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <input
+                            type="password"
+                            class="input-control"
+                            placeholder="Address"
+                            formControlName="address"
+                        />
+                    </fieldset>
+                </fieldset>
+            </div>
+            <button class="btn btn-lg btn-primary pull-xs-right" type="submit"
+            [disabled]="profileForm.invalid">
+            Save
+        </button>
+        </form>
+    </div>
+</div>

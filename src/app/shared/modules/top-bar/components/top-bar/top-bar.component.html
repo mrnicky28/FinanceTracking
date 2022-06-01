@@ -14,7 +14,7 @@
         </nav>
 
         <div class="auth-btns">
-            <div class="language">
+            <!-- <div class="language">
                 <div class="row">
                     <div class="col">
                         <div ngbDropdown class="d-inline-block">
@@ -28,13 +28,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
-                <div class="btn" [mat-menu-trigger-for]="userMenu">
+                <!-- <div class="user-name" [mat-menu-trigger-for]="userMenu">
                     {{user.displayName}}
-                </div>
-
-
+                </div> -->
+                <img class="profile-imge-topbar"
+                width="45"
+                height="45"
+                [src]="user.photoURL ?? 'assets/icons/user-image.png'"
+                alt="profile-image"
+            />
+                <button class="user-name" mat-button [mat-menu-trigger-for]="userMenu">
+                    {{user.displayName}}
+                    <mat-icon>expand_more</mat-icon>
+                </button>
             </ng-container>
             <ng-template #loginButton>
                 <div class="btn btn-login" (click)="signIn()">Log in</div>
@@ -53,9 +61,9 @@
 
     </div>
 </div> -->
-<mat-menu #userMenu="matMenu">
-    <div>Profile</div>
-    <div>Update profile</div>
-    <div>Settings</div>
-    <div (click)="logOut()">Log out</div>
+<mat-menu class="profile-menu" #userMenu="matMenu">
+    <div class="profile-menu-item" routerLink="/profile">Profile</div>
+    <div class="profile-menu-item">Update profile</div>
+    <div class="profile-menu-item">Settings</div>
+    <div class="profile-menu-item" (click)="logOut()">Log out</div>
 </mat-menu>

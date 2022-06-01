@@ -69,6 +69,7 @@ export class LoginComponent implements OnInit {
     }
     redirectToSignUp(): void {
         this.dialog.closeAll();
+        this.router.navigate(['/login']);
         this.dialog.open(RegisterComponent);
     }
 }

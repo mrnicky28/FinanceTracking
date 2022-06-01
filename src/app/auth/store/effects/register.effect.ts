@@ -2,6 +2,9 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { CurrentUserInterface } from 'src/app/shared/interfaces/currentUser.interface';
 import { PersistanceService } from 'src/app/shared/services/persistance/persistance.service';
+import {
+    UpdateProfileService
+} from 'src/app/shared/services/profile/update-profile/update-profile.service';
 
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -20,6 +23,7 @@ export class RegisterEffect {
     constructor(
         private actions$: Actions,
         private authService: AuthService,
+        private updateProfileService: UpdateProfileService,
         private persistanceService: PersistanceService,
         private router: Router,
         public dialog: MatDialog,
@@ -30,15 +34,24 @@ export class RegisterEffect {
         this.actions$.pipe(
             ofType(registerAction),
             switchMap(({ request }) => {
+                console.log(request);
                 return this.authService
                     .register(request)
                     .pipe(
+                        switchMap(({ user: { uid } }) =>
+                            this.updateProfileService.addUser({
+                                uid,
+                                email: request.email,
+                                displayName: request.displayName,
+                            }),
+                        ),
                         this.toast.observe({
                             success: 'Congrats! You are all signed up',
                             loading: 'Signing in...',
                             error: ({ message }) => `${message}`,
                         }),
                     )
+
                     .pipe(
                         map((currentUser: CurrentUserInterface) => {
                             this.persistanceService.set(

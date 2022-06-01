@@ -1,9 +1,10 @@
-import { from, Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { from, Observable, of } from 'rxjs';
+import { concatMap } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 import {
-    Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile
+    Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile,
+    UserInfo
 } from '@angular/fire/auth';
 
 @Injectable({
@@ -19,16 +20,28 @@ export class AuthService {
 
         return from(
             createUserWithEmailAndPassword(this.auth, request.email, request.password),
-        ).pipe(
-            switchMap(({ user }) =>
-                updateProfile(user, { displayName: request.username }),
-            ),
         );
+        // .pipe(
+        //     switchMap(({ user }) =>
+        //         updateProfile(user, { displayName: request.username }),
+        //     ),
+        // );
     }
 
     login({ ...request }): Observable<any> {
         return from(
             signInWithEmailAndPassword(this.auth, request.email, request.password),
+        );
+    }
+
+    updatetProfileData(profileData: Partial<UserInfo>): Observable<any> {
+        const user = this.auth.currentUser;
+        return of(user).pipe(
+            concatMap((user) => {
+                if (!user) throw new Error('Not Authenticated');
+
+                return updateProfile(user, profileData);
+            }),
         );
     }
 

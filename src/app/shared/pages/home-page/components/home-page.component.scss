@@ -1,0 +1,328 @@
+.container {
+    max-width: 1276px;
+    padding: 0 30px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height, or 122% */
+
+    text-align: center;
+    font-feature-settings: "salt" on, "liga" off;
+
+    /* Font Color/Title Color */
+
+    color: #0d3e36;
+    margin-bottom: 29px;
+}
+
+.section-description {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    /* identical to box height, or 29px */
+
+    text-align: center;
+    font-feature-settings: "salt" on, "liga" off;
+
+    /* Font Color/Subtitle Color */
+
+    color: #4d625f;
+    margin-bottom: 70px;
+}
+
+.header-section-container {
+    margin-bottom: 70px;
+}
+
+.section-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+
+.amazing-card {
+    padding: 20px 20px 20px 20px;
+    margin-right: 20px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    width: 290px;
+    height: 343px;
+    border: 1px solid #eaeaea;
+    border-radius: 18px;
+    &:last-child{
+        margin-right: 0;
+    }
+}
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+.card-title{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #2B2B2B;
+}
+.card-description{
+    margin-right: 0;
+    width: 238px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #808080;
+}
+
+.explained-link {
+    display: flex;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0fae96;
+}
+.explained-link:hover {
+    display: flex;
+    cursor: pointer;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #0fae96;
+}
+
+.new-cryptocurrency {
+    padding: 20px 60px;
+    border: #eaeaea 1px solid;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.text-section {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    width: 500px;
+}
+
+.new-cryptocurrency-description {
+    margin: 0;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    height: 32px;
+    padding: 0 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0fae96;
+    font-weight: 700;
+    width: 207px;
+    height: 56px;
+}
+////////////////////////////////////////
+.container-table {
+    max-width: 1276px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+}
+.table-row {
+    width: 100%;
+    height: 50px;
+    background-color: #2b2c2f;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px 10px 0 0;
+}
+.item {
+    display: flex;
+    align-items: center;
+    color: #181818;
+    background-color: #ffffff;
+    border-right: solid 1px #b5b5b5;
+    border-left: solid 1px #b5b5b5;
+    border-bottom: solid 1px #b5b5b5;
+    border-radius: 0;
+}
+.currency-image {
+    margin-right: 10px;
+}
+table,
+thead,
+tbody,
+th,
+td {
+    border: none;
+}
+thead {
+    height: 60px;
+    align-items: center;
+}
+
+.name {
+    padding-left: 20px;
+    border-radius: 10px 0 0 0;
+}
+.market-cap {
+    border-radius: 0 10px 0 0;
+}
+table {
+    font-weight: 500;
+    font-size: 16px;
+    border-collapse: collapse;
+    text-align: center;
+}
+th {
+    border: 1px solid #eaeaea;
+    border-radius: 4px 4px 0px 0px;
+}
+th,
+td {
+    border: none;
+}
+.table thead th {
+    vertical-align: middle;
+}
+td {
+    background: transparent;
+}
+th:first-child,
+td:first-child {
+    text-align: left;
+}
+
+.border-row {
+    border-bottom: solid 1px #e1e1e1;
+    border-top: solid 1px #e1e1e1;
+}
+
+.border-row:hover {
+    cursor: pointer;
+    background-color: rgba(213, 213, 213, 0.436);
+}
+table > tr > .border-header-row {
+    border-color: rgb(219, 219, 219);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px 10px 0 0;
+}
+
+// -------------------------------------------------------------------
+table {
+    font-weight: 500;
+    font-size: 32px;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+td,
+th.mat-header-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+th:first-child {
+    text-align: left;
+    border-radius: 20px 0 0 0;
+}
+th:last-child {
+    border-radius: 0 20px 0 0;
+}
+td.mat-cell {
+    border: none;
+}
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+    padding: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: none;
+}
+td.mat-cell:first-child {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+th {
+    font-size: 16px;
+}
+tr.mat-row {
+    height: 85px;
+}
+.currency-symbol {
+    font-size: 21px;
+    font-weight: 300;
+}
+.currency-fullname {
+    font-weight: 200;
+    margin: 0;
+}
+.block-currency-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cryptocurrency-link {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    text-decoration-line: underline;
+
+    /* High Fidelity Color/Primary Color */
+
+    color: #0fae96;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}

@@ -2,14 +2,11 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { RouterModule, Routes } from '@angular/router';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-
-import {
-    BackendErrorMessagesModule
-} from '../shared/modules/backend-error-messages/backend-error-messages.module';
+import { AppRoutingModule } from '../app-routing.module';
+import { BackendErrorMessagesModule } from '../shared/modules/backend-error-messages/backend-error-messages.module';
 import { LoadingModule } from '../shared/modules/loading/loading.module';
 import { MaterialModule } from '../shared/modules/material/material.module';
 import { PersistanceService } from '../shared/services/persistance/persistance.service';
@@ -19,11 +16,10 @@ import { LoginEffect } from './store/effects/login.effect';
 import { RegisterEffect } from './store/effects/register.effect';
 import { reducers } from './store/reducers';
 
-const routes: Routes = [];
-
 @NgModule({
     declarations: [LoginComponent, RegisterComponent],
     imports: [
+        AppRoutingModule,
         CommonModule,
         MaterialModule,
         MatDialogModule,
@@ -31,7 +27,6 @@ const routes: Routes = [];
         ReactiveFormsModule,
         BackendErrorMessagesModule,
         LoadingModule,
-        RouterModule.forChild(routes),
         StoreModule.forFeature('auth', reducers),
         EffectsModule.forFeature([RegisterEffect, LoginEffect]),
     ],

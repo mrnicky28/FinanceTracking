@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
     initializeForm(): void {
         this.registerForm = this.fb.group(
             {
-                username: [null, [Validators.required, Validators.maxLength(32)]],
+                displayName: [null, [Validators.required, Validators.maxLength(32)]],
                 email: [null, [Validators.required, Validators.email]],
                 password: [null, [Validators.required, Validators.minLength(10)]],
                 confirmPassword: [null, [Validators.required]],
@@ -77,6 +77,7 @@ export class RegisterComponent implements OnInit {
 
     redirectToLogin(): void {
         this.dialog.closeAll();
+        this.router.navigate(['/register']);
         this.dialog.open(LoginComponent);
     }
 }

@@ -1,7 +1,11 @@
+import 'firebase/storage';
+
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,12 +31,16 @@ import {
 } from './shared/modules/cryptocurrency-list/cryptocurrency-list.module';
 import { CurrencyTickerModule } from './shared/modules/currency-ticker/currency-ticker.module';
 import { MaterialModule } from './shared/modules/material/material.module';
+import { ProfilePageModule } from './shared/modules/profile/components/profile-page.module';
 import { PromoCarouselModule } from './shared/modules/promo-carousel/promo-carousel.module';
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
+import { HomePageModule } from './shared/pages/home-page/home-page.module';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
+        HomePageModule,
+        ProfilePageModule,
         HttpClientModule,
         MaterialModule,
         MatDialogModule,
@@ -48,6 +56,8 @@ import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
         AmazingFeaturesSectionModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideAuth(() => getAuth()),
+        provideStorage(() => getStorage()),
+        provideFirestore(() => getFirestore()),
         BrowserAnimationsModule,
         StoreModule.forRoot({ router: routerReducer }),
         StoreRouterConnectingModule.forRoot(),

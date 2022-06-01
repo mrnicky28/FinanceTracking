@@ -12,16 +12,16 @@
                     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <fieldset>
                             <fieldset class="form-group">
-                                <input type="text" class="input-control" placeholder="Name" formControlName="username" />
+                                <input type="text" class="input-control" placeholder="Name" formControlName="displayName" />
                                 <mat-error class="validation-errors"
-                                    *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid">
+                                    *ngIf="registerForm.get('displayName')?.touched && registerForm.get('displayName')?.invalid">
                                     <mat-error class="validation-errors"
-                                        *ngIf="registerForm.get('username')?.errors?.required">
+                                        *ngIf="registerForm.get('displayName')?.errors?.required">
                                         The name field must not be empty.
                                     </mat-error>
                                     <mat-error class="validation-errors"
-                                        *ngIf="registerForm.get('username')?.errors?.maxlength">The field must not exceed
-                                        {{ registerForm.get("username")?.errors?.maxlength.requiredLength }}
+                                        *ngIf="registerForm.get('displayName')?.errors?.maxlength">The field must not exceed
+                                        {{ registerForm.get("displayName")?.errors?.maxlength.requiredLength }}
                                         symbols.
                                     </mat-error>
                                 </mat-error>
