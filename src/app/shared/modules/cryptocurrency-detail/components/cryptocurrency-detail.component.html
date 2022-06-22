@@ -1,1 +1,28 @@
-<p>cryptocurrency-detail works!</p>
+<div class="container">
+    <div class="row">
+<div class="details">
+
+        <div class="block">
+            <div class="more-detail">
+                <div class="img">
+                    <img class="currency-image" [src]="coinData?.image?.large" alt="">
+                    <div class="text-center">{{coinData?.name}}</div>
+                </div>
+                <span class="title">Rank: {{coinData?.market_cap_rank}}</span>
+                <span class="title">Current Price: {{coinData?.market_data.current_price.usd | currency : currency}}</span>
+                <span class="title">Market Cap: {{coinData?.market_data.market_cap.usd | currency : currency}}</span>
+            </div>
+            <div class="text-description" [innerHtml]="coinData?.description?.en.split('. ')[0]"></div>
+        </div>
+</div>
+<div class="graph">
+    <canvas id="canvas" baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="lineChartType"></canvas>
+    <div class="btns">
+        <button class="btn" (click)="getGraphData(1)">24 Hours</button>
+        <button class="btn" (click)="getGraphData(30)">30 Days</button>
+        <button class="btn" (click)="getGraphData(90)">90 Days</button>
+        <button class="btn" (click)="getGraphData(365)">1 Year</button>
+    </div>
+</div>
+    </div>
+</div>

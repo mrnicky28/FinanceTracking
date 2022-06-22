@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+:root {
+  --blue: #0e0620;
+  --white: #fff;
+  --green: #2ccf6d;
+}
+
+.container {
+    max-width: 1276px;
+    padding: 0 30px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: Raleway, "sans-serif";
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+    margin-bottom: 100px;
+}
+button {
+    font-family: Raleway, "sans-serif";
+}
+ul {
+  list-style-type: none;
+  padding-inline-start: 35px;
+}
+svg {
+  width: 100%;
+  visibility: hidden;
+}
+h1 {
+  font-size: 7.5em;
+  margin: 15px 0px;
+  font-weight:bold;
+}
+h2 {
+  font-weight:bold;
+}
+
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    height: 32px;
+    padding: 0 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0fae96;
+    font-weight: 700;
+}
+
+.status{
+    color: #0fae96;
+    margin-bottom: 40px;
+}
+@media screen and (max-width:768px) {
+  body {
+    display:block;
+  }
+  .container {
+    margin-top:70px;
+    margin-bottom:70px;
+  }
+}

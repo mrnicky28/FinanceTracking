@@ -7,7 +7,7 @@ import {
 } from 'src/app/shared/services/profile/update-profile/update-profile.service';
 
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HotToastService } from '@ngneat/hot-toast';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
@@ -26,7 +26,10 @@ export class ProfilePageComponent implements OnInit {
         firstName: new FormControl(''),
         surname: new FormControl(''),
         birthDay: new FormControl(''),
-        phone: new FormControl(''),
+        email: new FormControl('', Validators.email),
+        phone: new FormControl('', [
+            Validators.pattern(`^([0-9]{2})?(s+)?[0-9]{3}-[0-9]{2}-[0-9]{2}$`),
+        ]),
         country: new FormControl(''),
         city: new FormControl(''),
         address: new FormControl(''),

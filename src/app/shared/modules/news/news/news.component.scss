@@ -1,0 +1,140 @@
+.container {
+    max-width: 1276px;
+    padding: 0 30px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+.news-image{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.block-news-input{
+    display: flex;
+    margin-bottom: 25px;
+    align-items: center;
+}
+.title-page{
+    margin: 0;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+    margin-right: 20px;
+}
+
+.card {
+    padding: 20px 20px 20px 20px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    border: 1px solid #eaeaea;
+    border-radius: 18px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.btns{
+    display: flex;
+    margin-bottom: 20px;
+
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    height: 32px;
+    padding: 0 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0fae96;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.search-input {
+    width: 400px;
+    height: 35px;
+    padding-left: 30px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    background: url('../../../../../assets/icons/icon-search.png') no-repeat left;
+
+}
+
+.news-title{
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 160%;
+}
+
+.news-description{
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.more-link{
+    margin: 0;
+    cursor: pointer;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 160%;
+    text-decoration: none;
+    color: #000000;
+}
+
+
+.section-cards {
+    display: block;
+
+    @media (max-width: 768px) {
+        .section-cards {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .card {
+            margin: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-description {
+            text-align: center;
+        }
+    }
+      @media (min-width: 960px) {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1276px) {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+}

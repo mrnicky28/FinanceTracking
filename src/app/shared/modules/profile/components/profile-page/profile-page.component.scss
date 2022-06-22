@@ -10,6 +10,7 @@
     width: 100%;
     background-color: rgba(245, 245, 245, 0.597);
     border-radius: 20px;
+    margin-bottom: 40px;
 }
 
 .profile-info{
@@ -55,11 +56,12 @@
 
 .form-group {
     margin-bottom: 10px;
-    width: 400px;
+    min-width: 400px;
 }
 
 .input-control{
     margin-bottom: 5px;
+    padding-right: 10px;
     padding-left: 10px;
     border-radius: 10px;
     width: 100%;
@@ -119,3 +121,22 @@ label{
 // .input-control{
 //     width: 200px;
 // }
+
+.input-address{
+    margin-bottom: 20px;
+}
+@media (max-width: 920px) {
+    .container{
+        padding: 0;
+    }
+    .profile-info{
+        margin-bottom: 20px;
+    }
+    .personal-settings{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    }

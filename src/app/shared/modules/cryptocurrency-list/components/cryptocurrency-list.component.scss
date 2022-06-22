@@ -3,6 +3,7 @@
     padding: 0 30px;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 70px;
 }
 .header {
     display: flex;
@@ -35,6 +36,14 @@
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
     margin-bottom: 45px;
 }
+
+@media (max-width: 768px) {
+    .search-input-cryptocurrency {
+        width: 300px;
+    }
+}
+
+
 // input:focus {
 //     border: 1px solid #00c46b;
 //   }
@@ -135,6 +144,9 @@ table {
 th.mat-sort-header-sorted {
     color: black;
 }
+.table-section-name{
+
+}
 
 td,
 th.mat-header-cell {
@@ -162,6 +174,7 @@ th {
 tr.mat-row {
     height: 85px;
 }
+
 .currency-symbol {
     font-size: 21px;
     font-weight: 300;
@@ -174,4 +187,44 @@ tr.mat-row {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.example-container {
+
+    max-width: 100%;
+    overflow: auto;
+  }
+
+//   @media (min-width: 760px) {
+//     .example-container{
+//         height: 400px;
+//     width: 550px;
+//     }
+// }
+
+  table {
+    width: 100%;
+  }
+  td.mat-cell {
+    border: none;
+    // background-color: white;
+}
+
+
+//   ::ng-deep .mat-sort-header-container {
+//         text-align: center !important;
+//         display: flex !important;
+//         align-items: center !important;
+//         height: 50px !important;
+// }
+
+td.mat-cell.cdk-cell:nth-child(2){
+    padding: 0 20px 0 20px;
+}
+td.mat-cell.cdk-cell:nth-child(3){
+    padding: 0 20px 0 20px;
+}
+
+td.mat-cell.cdk-cell:nth-child(4){
+    padding: 0 20px 0 20px;
 }

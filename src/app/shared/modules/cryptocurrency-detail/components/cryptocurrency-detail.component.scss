@@ -1,0 +1,83 @@
+.container {
+    max-width: 1276px;
+    padding: 0 30px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-family: Raleway, 'sans-serif';
+    font-weight: 600;
+    font-size: 28px;
+    color: #0D3E36;
+}
+
+.text-description{
+    font-family: Raleway, 'sans-serif';
+    font-weight: 600;
+    font-size: 28px;
+    color: #0D3E36;
+    width: 650px;
+    line-height: 1.2em;
+    align-items: center;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+}
+.graph{
+    height: 700px;
+    width: 100%;
+}
+canvas{
+    height: 400px;
+}
+
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    width: 150px;
+    height: 45px;
+    padding: 0 16px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0fae96;
+    font-weight: 700;
+}
+.text-center{
+    font-family: Raleway, 'sans-serif';
+    font-weight: 600;
+    font-size: 28px;
+    color: #0D3E36;
+
+}
+
+.more-detail{
+    width: 40%;
+}
+.currency-image{
+    width: 100px;
+    margin-right: 40px;
+}
+.img{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

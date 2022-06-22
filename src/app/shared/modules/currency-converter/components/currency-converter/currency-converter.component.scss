@@ -1,0 +1,118 @@
+.container {
+    border: 1px solid lightgrey;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px lightgrey;
+    font-family: Raleway, "sans-serif";
+    font-weight: 600;
+    font-size: 24px;
+    color: #0d3e36;
+    margin-bottom: 70px;
+}
+h2 {
+    font-family: Raleway, "sans-serif";
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+}
+label {
+    font-family: Raleway, "sans-serif";
+    font-weight: 600;
+    font-size: 20px;
+}
+.row {
+    display: flex;
+    flex-direction: column;
+}
+.amountInput {
+    margin: 15px 0px;
+    font-size: 17px;
+}
+input[type="number"] {
+    margin-top: 8px;
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 18px;
+}
+input[type="number"]:focus {
+    border-radius: 5px;
+    border: 1px solid #0fae96 !important;
+}
+.select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+select {
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    padding: 12px;
+    padding-right: 10px;
+    text-align: right;
+    padding: 10px 0 9px 25px;
+}
+select:focus {
+    border-radius: 5px;
+    border: 1px solid #0fae96 !important;
+}
+.flags {
+    position: relative;
+}
+.label {
+    margin-bottom: 8px;
+}
+img {
+    height: 19px;
+    position: absolute;
+    margin: 10px 2px;
+}
+.result {
+    margin-top: 40px;
+    font-size: 20px;
+}
+button {
+    margin-top: 40px;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #0fae96;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.link {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    border: 1px solid #0fae96;
+    color: rgb(55, 55, 55);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.link:hover {
+    background-color: #0fae96;
+    color: white;
+}
+#currencyTo {
+    font-size: 18px;
+}
+#currencyFrom {
+    font-size: 18px;
+}
+.option {
+    margin: 0;
+    padding: 0px;
+    font-size: 16px;
+    align-items: center;
+}

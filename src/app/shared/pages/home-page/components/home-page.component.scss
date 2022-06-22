@@ -3,6 +3,7 @@
     padding: 0 30px;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 60px;
 }
 
 .section-title {
@@ -44,15 +45,14 @@
 }
 
 .section-cards {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
     margin-bottom: 60px;
 }
 
 
 .amazing-card {
     padding: 20px 20px 20px 20px;
-    margin-right: 20px;
     font-family: "Raleway";
     font-style: normal;
     font-weight: 400;
@@ -62,16 +62,19 @@
     height: 343px;
     border: 1px solid #eaeaea;
     border-radius: 18px;
-    &:last-child{
+
+    &:last-child {
         margin-right: 0;
     }
 }
+
 .card-icon {
     width: 80px;
     height: 80px;
     margin-bottom: 20px;
 }
-.card-title{
+
+.card-title {
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 600;
@@ -79,7 +82,8 @@
     line-height: 30px;
     color: #2B2B2B;
 }
-.card-description{
+
+.card-description {
     margin-right: 0;
     width: 238px;
     font-family: 'Raleway';
@@ -99,6 +103,7 @@
     line-height: 24px;
     color: #0fae96;
 }
+
 .explained-link:hover {
     display: flex;
     cursor: pointer;
@@ -120,6 +125,9 @@
     margin-bottom: 60px;
 }
 
+
+
+
 .text-section {
     font-family: "Raleway";
     font-style: normal;
@@ -127,6 +135,21 @@
     font-size: 18px;
     line-height: 160%;
     width: 500px;
+}
+@media (max-width: 768px) {
+    .new-cryptocurrency {
+        padding: 10px 30px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+    .text-section{
+        width: 100%;
+        margin: 20px;
+    }
 }
 
 .new-cryptocurrency-description {
@@ -152,6 +175,7 @@
     width: 207px;
     height: 56px;
 }
+
 ////////////////////////////////////////
 .container-table {
     max-width: 1276px;
@@ -163,6 +187,7 @@
 .table {
     width: 100%;
 }
+
 .table-row {
     width: 100%;
     height: 50px;
@@ -173,6 +198,7 @@
     justify-content: space-around;
     border-radius: 10px 10px 0 0;
 }
+
 .item {
     display: flex;
     align-items: center;
@@ -183,9 +209,11 @@
     border-bottom: solid 1px #b5b5b5;
     border-radius: 0;
 }
+
 .currency-image {
     margin-right: 10px;
 }
+
 table,
 thead,
 tbody,
@@ -193,6 +221,7 @@ th,
 td {
     border: none;
 }
+
 thead {
     height: 60px;
     align-items: center;
@@ -202,29 +231,36 @@ thead {
     padding-left: 20px;
     border-radius: 10px 0 0 0;
 }
+
 .market-cap {
     border-radius: 0 10px 0 0;
 }
+
 table {
     font-weight: 500;
     font-size: 16px;
     border-collapse: collapse;
     text-align: center;
 }
+
 th {
     border: 1px solid #eaeaea;
     border-radius: 4px 4px 0px 0px;
 }
+
 th,
 td {
     border: none;
 }
+
 .table thead th {
     vertical-align: middle;
 }
+
 td {
     background: transparent;
 }
+
 th:first-child,
 td:first-child {
     text-align: left;
@@ -239,7 +275,8 @@ td:first-child {
     cursor: pointer;
     background-color: rgba(213, 213, 213, 0.436);
 }
-table > tr > .border-header-row {
+
+table>tr>.border-header-row {
     border-color: rgb(219, 219, 219);
     border-width: 1px;
     border-style: solid;
@@ -265,16 +302,22 @@ th.mat-header-cell {
     text-align: center;
     vertical-align: middle;
 }
+
 th:first-child {
     text-align: left;
     border-radius: 20px 0 0 0;
 }
+
 th:last-child {
     border-radius: 0 20px 0 0;
 }
+
 td.mat-cell {
     border: none;
+    // background-color: white;
 }
+
+
 th.mat-header-cell,
 td.mat-cell,
 td.mat-footer-cell {
@@ -282,30 +325,38 @@ td.mat-footer-cell {
     border-bottom-width: 1px;
     border-bottom-style: none;
 }
+
 td.mat-cell:first-child {
     display: flex;
     align-items: center;
     padding-top: 10px;
+    padding-right: 10px;
 }
+
 th {
     font-size: 16px;
 }
+
 tr.mat-row {
     height: 85px;
 }
+
 .currency-symbol {
     font-size: 21px;
     font-weight: 300;
 }
+
 .currency-fullname {
     font-weight: 200;
     margin: 0;
 }
+
 .block-currency-name {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .cryptocurrency-link {
     font-family: "Raleway";
     font-style: normal;
@@ -326,3 +377,117 @@ tr.mat-row {
     order: 0;
     flex-grow: 1;
 }
+.section-cards{
+    display: flex;
+}
+
+
+.section-cards {
+    display: block;
+    padding: 16px;
+
+    @media (max-width: 768px) {
+        .section-cards {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .amazing-card {
+            margin: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-description {
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+
+        .section-cards {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .amazing-card {
+            margin: 0;
+            margin-bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-description {
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 420px) {
+       .promo{
+        height: 500px;
+       }
+    }
+
+    // @media (min-width: 960px) {
+    //     display: grid;
+    //     grid-template-columns: repeat(3, 1fr);
+    // }
+
+    @media (min-width: 1276px) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .amazing-card {
+        margin-bottom: 20px;
+    }
+
+}
+.example-container {
+    max-width: 100%;
+    overflow: auto;
+    margin-bottom: 20px;
+  }
+
+//   @media (min-width: 760px) {
+//     .example-container{
+//         height: 400px;
+//     width: 550px;
+//     }
+// }
+
+  table {
+    width: 100%;
+  }
+
+
+
+  ::ng-deep .mat-sort-header-container {
+        text-align: center !important;
+        display: flex !important;
+        align-items: center !important;
+        height: 50px !important;
+}
+
+td.mat-cell.cdk-cell:nth-child(2){
+    padding: 0 20px 0 20px;
+}
+td.mat-cell.cdk-cell:nth-child(3){
+    padding: 0 20px 0 20px;
+}
+
+td.mat-cell.cdk-cell:nth-child(4){
+    padding: 0 20px 0 20px;
+}
+

@@ -29,15 +29,22 @@ import {
 import {
     CryptocurrencyListModule
 } from './shared/modules/cryptocurrency-list/cryptocurrency-list.module';
+import {
+    CurrencyConverterModule
+} from './shared/modules/currency-converter/currency-converter.module';
 import { CurrencyTickerModule } from './shared/modules/currency-ticker/currency-ticker.module';
+import { FooterModule } from './shared/modules/footer/footer.module';
 import { MaterialModule } from './shared/modules/material/material.module';
+import { NewsModule } from './shared/modules/news/news.module';
 import { ProfilePageModule } from './shared/modules/profile/components/profile-page.module';
 import { PromoCarouselModule } from './shared/modules/promo-carousel/promo-carousel.module';
 import { TopBarModule } from './shared/modules/top-bar/top-bar.module';
+import { AboutCryptoModule } from './shared/pages/about-crypto/about-crypto.module';
 import { HomePageModule } from './shared/pages/home-page/home-page.module';
+import { NotFoundComponent } from './shared/pages/not-found/not-found.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, NotFoundComponent],
     imports: [
         HomePageModule,
         ProfilePageModule,
@@ -54,6 +61,10 @@ import { HomePageModule } from './shared/pages/home-page/home-page.module';
         CryptocurrencyListModule,
         CryptocurrencyDetailModule,
         AmazingFeaturesSectionModule,
+        NewsModule,
+        AboutCryptoModule,
+        CurrencyConverterModule,
+        FooterModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideAuth(() => getAuth()),
         provideStorage(() => getStorage()),

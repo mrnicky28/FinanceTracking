@@ -3,26 +3,23 @@
         <div class="logo">
             <a routerLink="/home"> Finance<span class="second-word-logo">Tracking</span></a>
         </div>
-        <nav>
+        <nav class="block-nav">
             <ul class="topmenu">
-                <li><a class="submenu-link" routerLink="/cryptocurrency-list">Cryptocurrency</a>
+                <li><a routerLink="/cryptocurrency-list">Cryptocurrency</a>
                 </li>
-                <li><a href="news">News & Analysis</a></li>
-                <li><a href="news">Learning to trade</a></li>
-                <li><a href="about us">About Us</a></li>
+                <li><a routerLink="/news">News</a></li>
+                <li><a routerLink="/currency-convert">Currency</a></li>
+                <li><a routerLink="about us">About Us</a></li>
+                <li></li>
             </ul>
         </nav>
 
         <div class="auth-btns">
-            <ng-container *ngIf="user$| async as user; else loginButton">
-                <img class="profile-imge-topbar"
-                width="45"
-                height="45"
-                [src]="user.photoURL ?? 'assets/icons/user-image.png'"
-                alt="profile-image"
-            />
+            <ng-container class="hide" *ngIf="user$| async as user; else loginButton">
+                <img class="profile-imge-topbar" width="45" height="45"
+                    [src]="user.photoURL ?? 'assets/icons/user-image.png'" alt="profile-image" />
                 <button class="user-name" mat-button [mat-menu-trigger-for]="userMenu">
-                    {{user.displayName}}
+                    <span class="hide">{{user.displayName}}</span>
                     <mat-icon>expand_more</mat-icon>
                 </button>
             </ng-container>
@@ -30,12 +27,23 @@
                 <div class="btn btn-login" (click)="signIn()">Log in</div>
                 <div class="btn btn-register" (click)="signUp()">Sign up</div>
             </ng-template>
-        </div>
 
+            <mat-form-field class="currency-block" appearance="outline" style="width: 80px;">
+                <mat-select class="mat-btn" (valueChange)="sendCurrency($event)" [(ngModel)]="selectedCurrency">
+                    <mat-option selected value="USD">USD</mat-option>
+                    <mat-option value="EUR">EUR</mat-option>
+                    <mat-option value="RUB">RUB</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
     </div>
 </div>
 <mat-menu class="profile-menu" #userMenu="matMenu">
+    <div class="profile-menu-item hide-menu-item" routerLink="/cryptocurrency-list">Cryptocurrency</div>
+    <div class="profile-menu-item hide-menu-item" routerLink="/news">News</div>
+    <div class="profile-menu-item hide-menu-item" routerLink="/currency-convert">Currency</div>
+    <div class="profile-menu-item hide-menu-item" routerLink="about us">About Us</div>
     <div class="profile-menu-item" routerLink="/profile">Profile</div>
-    <div class="profile-menu-item">Settings</div>
+    <!-- <div class="profile-menu-item">Settings</div> -->
     <div class="profile-menu-item" (click)="logOut()">Log out</div>
 </mat-menu>

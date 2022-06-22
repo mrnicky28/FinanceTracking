@@ -25,6 +25,19 @@
     margin-right: auto;
     background-color: #1b1b1b;
 }
+@media (max-width: 1200px) {
+    .modal-cont {
+        width: 60%;
+
+    }
+}
+@media (max-width: 620px) {
+    .modal-cont {
+        width: 90%;
+
+    }
+}
+
 
 .modal-container {
     background-color: #fff;

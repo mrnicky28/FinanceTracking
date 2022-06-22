@@ -2,6 +2,10 @@ import { LoginComponent } from 'src/app/auth/components/login/login/login.compon
 import { RegisterComponent } from 'src/app/auth/components/register/register/register.component';
 import { AuthService } from 'src/app/auth/services/authentication/auth.service';
 import {
+    CurrensiesDataService
+} from 'src/app/shared/services/currencies-data/currensies-data.service';
+import { CurrencyService } from 'src/app/shared/services/currency/currency.service';
+import {
     UpdateProfileService
 } from 'src/app/shared/services/profile/update-profile/update-profile.service';
 
@@ -16,28 +20,33 @@ import { Router } from '@angular/router';
 })
 export class TopBarComponent implements OnInit {
     user$ = this.updateUserProfileService.currentUserProfile$;
+    selectedCurrency: string = 'USD';
     constructor(
         public dialog: MatDialog,
         private router: Router,
         private authService: AuthService,
         public updateUserProfileService: UpdateProfileService,
+        private currencyService: CurrencyService,
     ) {}
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void {}
 
     signIn(): void {
         const dialogConfig = new MatDialogConfig();
         this.dialog.open(LoginComponent);
-        this.router.navigate(['/login']);
+        // this.router.navigate(['/login']);
     }
     signUp(): void {
         this.dialog.open(RegisterComponent);
-        this.router.navigate(['/register']);
+        // this.router.navigate(['/register']);
     }
     logOut(): void {
         this.authService.logout().subscribe(() => {
             this.router.navigate(['/home']);
         });
+    }
+
+    sendCurrency(event: string) {
+        this.currencyService.setCurrency(event);
     }
 }

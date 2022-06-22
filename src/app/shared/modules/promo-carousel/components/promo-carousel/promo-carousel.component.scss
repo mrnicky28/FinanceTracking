@@ -12,11 +12,11 @@ background-size: contain;
 }
 
 .container {
-    max-width: 1276px;
-    padding: 0 30px;
+    // max-width: 1276px;
+    // padding: 0 30px;
     width: 100%;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
 .btn {
@@ -50,7 +50,6 @@ background-size: contain;
 
 .banner-title-wrapper {
     margin-bottom: 20px;
-    width: 60%;
 }
 
 .banner-title {
@@ -80,4 +79,37 @@ background-size: contain;
 }
 .carousel-section{
     margin-bottom: 30px;
+}
+
+@media (max-width: 420px) {
+    .img-carousel {
+        height: 500px;
+        text-align: center;
+    }
+    .banner-title-wrapper{
+margin: 0;
+width: 100%;
+margin-bottom: 20px;
+    }
+    .banner-title{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 920px) {
+    .img-carousel {
+        height: 500px;
+        text-align: center;
+    }
+    .banner-title-wrapper{
+margin: 0;
+width: 100%;
+margin-bottom: 20px;
+    }
+    .banner-title{
+        font-size: 30px;
+    }
+}
+.carousel-indicators{
+width: 160% !important;
 }
